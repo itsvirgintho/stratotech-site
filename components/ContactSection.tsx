@@ -1,0 +1,12 @@
+// components/ContactSection.tsx
+import React from "react";
+import Section from "./Section";
+
+export default function ContactSection() {
+  return (
+    <Section style={{ marginTop: "40px", borderRadius: "12px", padding: "20px", backgroundColor: "#161b22" }}>
+      <h2>Contact</h2>
+      <p>This is a placeholder for the contact section content.</p>
+    </Section>
+  );
+}

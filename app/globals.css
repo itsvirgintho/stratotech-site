@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* =========================
+   STRATOTECH DESIGN SYSTEM
+   Architecture-Level Identity
+========================= */
+
+@theme {
+  /* Core Colors */
+  --color-background: #F6F4EF;
+  --color-primary: #D65A1E;
+  --color-peach: #F3A07C;
+  --color-accent: #E2A72E;
+  --color-text: #2E2A26;
+  --color-text-muted: #7A746E;
+  --color-border: #C6C1BB;
+
+  /* Typography */
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Radius */
+  --radius-sm: 4px;
+
+  /* Spacing Scale */
+  --space-section: 128px;
+  --space-block: 64px;
+  --space-content: 32px;
+
+  /* Motion */
+  --ease-engineered: cubic-bezier(0.33, 1, 0.68, 1);
+  --duration-slow: 800ms;
+}
+
+/* Base Layer */
+
+html {
+  color: var(--color-text);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  height: 100%;
+  min-height: 100%;
+  background: transparent;
+}
+
+body {
+  color: var(--color-text);
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Structural Utility Classes (Architectural Defaults) */
+
+.container-architectural {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section-architectural {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+/* Ensure full viewport coverage on iOS */
+html, body {
+  overscroll-behavior: none;
+}
