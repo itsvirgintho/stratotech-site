@@ -158,7 +158,7 @@ export default function Home() {
                 {/* Strato Icon Above Hero */}
                 <div className="relative mt-0 mb-0 flex justify-center z-20">
                   <img
-                    src="/Logo.png"
+                    src="/logo.png"
                     alt="SthayratoTech Logo"
                     className="w-80 md:w-[370px] lg:w-[485px] xl:w-[600px] h-auto object-contain"
                   />
