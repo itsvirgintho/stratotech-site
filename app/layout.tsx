@@ -41,8 +41,18 @@ export default function RootLayout({
         <meta name="twitter:title" content="StratoTech — Where Surfaces Become Systems" />
         <meta name="twitter:description" content="Advanced multi-layer surface engineering systems designed for structural performance and architectural precision." />
         <meta name="twitter:image" content="https://www.stratotechsystems.com/favicon.png?v=2" />
+        <style>{`
+          :root {
+            --app-height: 100vh;
+          }
+          @supports (-webkit-touch-callout: none) {
+            :root {
+              --app-height: 100dvh;
+            }
+          }
+        `}</style>
       </head>
-      <body className="text-white font-body antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden min-h-[100dvh] flex flex-col bg-[#0388cc] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+      <body className="text-white font-body antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden min-h-[var(--app-height)] flex flex-col bg-[#0388cc] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         {/* Gradient Background */}
         <div className="fixed inset-[-20px] -z-30 bg-gradient-to-b from-[#0388cc] to-[#afdce4] pointer-events-none" />
 
