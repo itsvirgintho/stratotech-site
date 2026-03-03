@@ -146,10 +146,10 @@ export default function Contact() {
             </p>
 
             <a
-              href="mailto:contact@stratotech.com"
+              href="mailto:info@stratotechsystems.com"
               className="text-2xl md:text-3xl font-semibold text-white hover:text-white/80 transition duration-300 border-b border-white/20 hover:border-white/50 pb-2"
             >
-              contact@stratotech.com
+              info@stratotechsystems.com
             </a>
 
             <p className="text-white/50 text-sm max-w-xs">
