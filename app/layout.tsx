@@ -29,6 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${bodyFont.variable} bg-transparent`}>
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body className="text-white font-body antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden min-h-[100dvh] flex flex-col bg-[#0388cc] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         {/* Gradient Background */}
         <div className="fixed inset-[-20px] -z-30 bg-gradient-to-b from-[#0388cc] to-[#afdce4] pointer-events-none" />
