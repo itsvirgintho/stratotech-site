@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -7,22 +8,22 @@ const Footer: React.FC = () => {
         <div className="flex-1 min-w-[200px]">
           <h3 className="text-sm tracking-widest uppercase text-white/60 mb-6">Company</h3>
           <ul className="space-y-3">
-            <li><a href="/about" className="text-white/70 hover:text-white transition-colors duration-300">About Us</a></li>
-            <li><a href="/contact" className="text-white/70 hover:text-white transition-colors duration-300">Contact Us</a></li>
+            <li><Link href="/about-us" className="text-white/70 hover:text-white transition-colors duration-300">About Us</Link></li>
+            <li><Link href="/contact" className="text-white/70 hover:text-white transition-colors duration-300">Contact Us</Link></li>
           </ul>
         </div>
         <div className="flex-1 min-w-[200px]">
           <h3 className="text-sm tracking-widest uppercase text-white/60 mb-6">Systems</h3>
           <ul className="space-y-3">
-            <li><a href="/systems" className="text-white/70 hover:text-white transition-colors duration-300">Stratotech Systems</a></li>
-            <li><a href="/services" className="text-white/70 hover:text-white transition-colors duration-300">Services</a></li>
+            <li><Link href="/systems" className="text-white/70 hover:text-white transition-colors duration-300">Stratotech Systems</Link></li>
+            <li><Link href="/services" className="text-white/70 hover:text-white transition-colors duration-300">Services</Link></li>
           </ul>
         </div>
         <div className="flex-1 min-w-[200px]">
           <h3 className="text-sm tracking-widest uppercase text-white/60 mb-6">Legal</h3>
           <ul className="space-y-3">
-            <li><a href="/terms" className="text-white/70 hover:text-white transition-colors duration-300">Terms of Service</a></li>
-            <li><a href="/privacy" className="text-white/70 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+            <li><Link href="/terms" className="text-white/70 hover:text-white transition-colors duration-300">Terms of Service</Link></li>
+            <li><Link href="/privacy" className="text-white/70 hover:text-white transition-colors duration-300">Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
