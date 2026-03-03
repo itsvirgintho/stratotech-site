@@ -13,11 +13,6 @@ const categories = [
         description:
           "A premium, water-based PU topcoat that seals in your design. Engineered for exceptional wear and UV resistance to ensure long-lasting protection. Available in Gloss or Matte.",
       },
-      {
-        title: "Strato Stampa",
-        description:
-          "A High Strength, high-viscosity epoxy mortar engineered for stamped and textured surfaces. It bonds powerfully, cures to a dense chemical-resistant finish, and is built for demanding interior and exterior applications.",
-      },
     ],
   },
   {
@@ -121,7 +116,7 @@ export default function Systems() {
         <div className="px-6 py-4 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md shadow-lg max-w-3xl mx-auto">
           <h4 className="text-white font-semibold mb-2">Environmentally Responsible</h4>
           <p className="text-white/70 text-sm md:text-base">
-            StratoTech’s epoxy systems extend the life of existing surfaces, minimizing demolition and waste. Our Strato Metallico and Strato Minerale lines incorporate reclaimed metals and natural mineral byproducts, turning waste streams into high-performance decorative aggregates. With reduced system thickness and efficient material use, StratoTech delivers durable, sustainable solutions with minimal environmental impact.
+            StratoTech’s High Performance Resin Systems extend the life of existing surfaces, minimizing demolition and waste. Our Strato Metallico and Strato Minerale lines incorporate reclaimed metals and natural mineral byproducts, turning waste streams into high-performance decorative aggregates. With reduced system thickness and efficient material use, StratoTech delivers durable, sustainable solutions with minimal environmental impact.
           </p>
         </div>
       </div>
