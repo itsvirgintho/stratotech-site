@@ -30,8 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${bodyFont.variable} bg-transparent`}>
       <head>
-        <link rel="icon" type="image/png" href="/favicon.png?v=2" />
-        <link rel="apple-touch-icon" href="/favicon.png?v=2" />
         <meta property="og:title" content="StratoTech — Where Surfaces Become Systems" />
         <meta property="og:description" content="Advanced multi-layer surface engineering systems designed for structural performance and architectural precision." />
         <meta property="og:image" content="https://www.stratotechsystems.com/favicon.png?v=2" />
@@ -52,7 +50,7 @@ export default function RootLayout({
           }
         `}</style>
       </head>
-      <body className="text-white font-body antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden min-h-[var(--app-height)] flex flex-col bg-[#0388cc] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+      <body className="text-white font-body antialiased selection:bg-white/20 selection:text-white relative overflow-x-hidden min-h-[var(--app-height)] flex flex-col pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         {/* Gradient Background */}
         <div className="fixed inset-[-20px] -z-30 bg-gradient-to-b from-[#0388cc] to-[#afdce4] pointer-events-none" />
 
