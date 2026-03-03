@@ -1,8 +1,40 @@
 "use client";
 import { motion } from "framer-motion";
 import Section from "../../components/Section";
+import React from "react";
 
 export default function Contact() {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement)?.value || "",
+      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value || "",
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert("Error sending message: " + data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send message");
+    }
+  };
+
   return (
     <div className="min-h-screen px-6 py-20 md:px-12 bg-transparent text-white">
       {/* Hero Section */}
@@ -23,6 +55,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
         {/* Contact Form */}
         <motion.form
+          onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -50,6 +83,28 @@ export default function Contact() {
             required
             className="mb-8 p-4 rounded-xl bg-white/5 border border-white/15 placeholder-white/40 text-white focus:outline-none focus:ring-2 focus:ring-white/40"
             placeholder="you@example.com"
+          />
+
+          <label htmlFor="company" className="mb-3 font-semibold text-white">
+            Company
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            className="mb-8 p-4 rounded-xl bg-white/5 border border-white/15 placeholder-white/40 text-white focus:outline-none focus:ring-2 focus:ring-white/40"
+            placeholder="Your company"
+          />
+
+          <label htmlFor="phone" className="mb-3 font-semibold text-white">
+            Phone
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            className="mb-8 p-4 rounded-xl bg-white/5 border border-white/15 placeholder-white/40 text-white focus:outline-none focus:ring-2 focus:ring-white/40"
+            placeholder="Your phone number"
           />
 
           <label htmlFor="message" className="mb-3 font-semibold text-white">
