@@ -167,8 +167,8 @@ export default function Home() {
                 {/* Slogan */}
                 <div className="w-80 md:w-[370px] lg:w-[485px] xl:w-[600px] text-center mt-2 mb-2">
                   <p className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight">
-                    Design Crafted,<br />
-                    Precision Engineered,<br />
+                    Design Crafted<br />
+                    Precision Engineered<br />
                     Performance Proven
                   </p>
                 </div>
@@ -257,7 +257,7 @@ export default function Home() {
           loading="lazy"
         />
         <motion.a
-          href="/contact-us"
+          href="/about-us"
           id="view-projects-cta"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -281,19 +281,18 @@ export default function Home() {
       </h2>
 
       <Section>
-        <div className="overflow-hidden flex items-center">
+        <div className="overflow-x-auto overflow-y-hidden py-4">
           <motion.div
-            className="flex"
+            className="flex w-max gap-4"
             animate={controls}
-            style={{ width: "200%" }}
           >
             {[...carouselIcons, ...carouselIcons].map((icon, index) => (
               <div
                 key={index}
-                className="w-56 h-56 rounded-2xl p-6 mx-10 flex-shrink-0 flex items-center justify-center relative border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-300"
+                className="w-56 h-56 rounded-2xl p-6 flex-shrink-0 flex items-center justify-center relative border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-300"
                 title={`Feature icon ${index % carouselIcons.length + 1}`}
               >
-                <img src={icon} alt={`Feature icon ${index % carouselIcons.length + 1}`} className="object-contain w-full h-full relative" loading="lazy" />
+                <img src={icon} alt={`Feature icon ${index % carouselIcons.length + 1}`} className="object-contain w-full h-full" loading="lazy" />
               </div>
             ))}
           </motion.div>
