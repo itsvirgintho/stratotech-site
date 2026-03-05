@@ -147,7 +147,7 @@ export default function Contact() {
 
             <a
               href="mailto:info@stratotechsystems.com"
-              className="text-2xl md:text-3xl font-semibold text-white hover:text-white/80 transition duration-300 border-b border-white/20 hover:border-white/50 pb-2"
+              className="text-2xl md:text-3xl font-semibold text-white hover:text-white/80 transition duration-300 border-b border-white/20 hover:border-white/50 pb-2 break-words max-w-full text-center leading-tight"
             >
               info@stratotechsystems.com
             </a>

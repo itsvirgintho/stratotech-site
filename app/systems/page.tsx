@@ -10,6 +10,7 @@ const categories = [
     systems: [
       {
         title: "Strato Scudo",
+        logo: "/systems/StratoScudo.png",
         description:
           "A premium, water-based PU topcoat that seals in your design. Engineered for exceptional wear and UV resistance to ensure long-lasting protection. Available in Gloss or Matte.",
       },
@@ -22,16 +23,19 @@ const categories = [
     systems: [
       {
         title: "Strato Stampa",
+        logo: "/systems/StratoStampa.png",
         description:
           "A High Strength, high-viscosity epoxy mortar engineered for stamped and textured surfaces. It bonds powerfully, cures to a dense chemical-resistant finish, and is built for demanding interior and exterior applications.",
       },
       {
         title: "Strato Forte",
+        logo: "/systems/StratoForte.png",
         description:
           "A 100% solids epoxy primer and binder that strengthens and seals absorbent substrates. Blended with precision granules, it builds an extremely durable, high performance film.",
       },
       {
         title: "Strato VB",
+        logo: "/systems/StratoVB.png",
         description:
           "A next-generation, solvent-free epoxy vapor barrier that deeply penetrates and bonds to porous substrates. It creates a structural anchoring layer that blocks moisture, stabilizes concrete, and guarantees maximum adhesion for subsequent coats.",
       },
@@ -44,21 +48,25 @@ const categories = [
     systems: [
       {
         title: "Strato Croma",
+        logo: "/systems/StratoCroma.png",
         description:
           "UV Stable granules available in a wide spectrum of colors. Engineered with microporous structure for anti-slip properties and increased binding performance.",
       },
       {
         title: "Strato Minerale",
+        logo: "/systems/StratoMinerale.png",
         description:
           "Natural mineral aggregates crushed into sand and powder forms. Designed for superior durability, natural texture, and long-term color stability.",
       },
       {
         title: "Strato Metallico",
+        logo: "/systems/StratoMetallico.png",
         description:
           "Metallic sands and powders formulated for resin integration or mortar-style application, offering premium marbled, reflective, and tooled metallic aesthetics.",
       },
       {
         title: "Strato Aqua",
+        logo: "/systems/StratoAqua.png",
         description:
           "Specialized blends of Strato Croma and Strato Minerale specifically engineered for underwater and submerged applications, maintaining adhesion, vibrancy, and durability in aquatic environments.",
       },
@@ -151,21 +159,30 @@ export default function Systems() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+              className="flex flex-wrap justify-center gap-8"
               role="tabpanel"
               aria-labelledby={`tab-${activeCategory.name}`}
             >
               {activeCategory.systems.length > 0 ? (
-                activeCategory.systems.map(({ title, description }) => (
+                activeCategory.systems.map(({ title, description, logo }) => (
                   <motion.div
                     key={title}
                     variants={itemVariants}
                     initial="hidden"
                     animate="visible"
                     whileHover={{ scale: 1.05 }}
-                    className="cursor-pointer rounded-2xl p-6 border border-white/15 bg-white/5 backdrop-blur-md transition-transform duration-300 flex flex-col justify-between hover:bg-white/10 hover:scale-105"
+                    className="group w-full sm:w-[45%] md:w-[30%] lg:w-[22%] min-h-[260px] rounded-2xl p-6 border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-300 flex flex-col items-center text-center justify-between hover:bg-white/10 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
                   >
-                    <h4 className="text-white text-xl font-semibold mb-3">{title}</h4>
+                    {logo && (
+                      <div className="h-16 flex items-center justify-center mb-4">
+                        <img
+                          src={logo}
+                          alt={title}
+                          className="max-h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
+                    )}
+                    <h4 className="text-white text-xl font-semibold mb-2">{title}</h4>
                     <p className="text-white/70 text-sm leading-relaxed font-light">{description}</p>
                   </motion.div>
                 ))
