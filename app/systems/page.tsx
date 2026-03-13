@@ -85,7 +85,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 12 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -155,7 +155,7 @@ export default function Systems() {
           {activeCategory && (
             <motion.div
               key={activeCategory.name}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 1, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}

@@ -17,9 +17,82 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "StratoTech — Where Surfaces Become Systems",
+  metadataBase: new URL("https://www.stratotechsystems.com"),
+  title: "StratoTech | High Performance Resin Systems",
   description:
-    "Advanced multi-layer surface engineering systems designed for structural performance and architectural precision.",
+    "StratoTech builds high-performance resin surface systems engineered layer by layer for durability, design freedom, and architectural precision.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "StratoTech | High Performance Resin Systems",
+    description:
+      "StratoTech builds high-performance resin surface systems engineered layer by layer for durability, design freedom, and architectural precision.",
+    url: "https://www.stratotechsystems.com",
+    siteName: "StratoTech",
+    type: "website",
+    images: [
+      {
+        url: "/favicon.png?v=2",
+        width: 512,
+        height: 512,
+        alt: "StratoTech logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StratoTech | High Performance Resin Systems",
+    description:
+      "StratoTech builds high-performance resin surface systems engineered layer by layer for durability, design freedom, and architectural precision.",
+    images: ["/favicon.png?v=2"],
+  },
+  keywords: [
+    "StratoTech",
+    "high-performance resin systems",
+    "surface engineering",
+    "architectural surfaces",
+    "resin surface systems",
+  ],
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.stratotechsystems.com/#organization",
+      name: "StratoTech",
+      alternateName: "StratoTech Advanced Surfaces",
+      url: "https://www.stratotechsystems.com",
+      logo: "https://www.stratotechsystems.com/logo.png",
+      description:
+        "StratoTech builds high-performance resin surface systems engineered layer by layer for durability, design freedom, and architectural precision.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.stratotechsystems.com/#website",
+      url: "https://www.stratotechsystems.com",
+      name: "StratoTech",
+      publisher: { "@id": "https://www.stratotechsystems.com/#organization" },
+      description:
+        "StratoTech builds high-performance resin surface systems engineered layer by layer for durability, design freedom, and architectural precision.",
+      inLanguage: "en",
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.stratotechsystems.com/#webpage",
+      url: "https://www.stratotechsystems.com",
+      name: "StratoTech | High Performance Resin Systems",
+      description:
+        "High-performance resin systems engineered by StratoTech to deliver durable, design-forward architectural surfaces.",
+      about: {
+        "@type": "Thing",
+        name: "High-performance resin systems",
+      },
+      isPartOf: { "@id": "https://www.stratotechsystems.com/#website" },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -30,15 +103,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${bodyFont.variable} bg-transparent`}>
       <head>
-        <meta property="og:title" content="StratoTech — Where Surfaces Become Systems" />
-        <meta property="og:description" content="Advanced multi-layer surface engineering systems designed for structural performance and architectural precision." />
-        <meta property="og:image" content="https://www.stratotechsystems.com/favicon.png?v=2" />
-        <meta property="og:url" content="https://www.stratotechsystems.com" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="StratoTech — Where Surfaces Become Systems" />
-        <meta name="twitter:description" content="Advanced multi-layer surface engineering systems designed for structural performance and architectural precision." />
-        <meta name="twitter:image" content="https://www.stratotechsystems.com/favicon.png?v=2" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <style>{`
           :root {
             --app-height: 100vh;

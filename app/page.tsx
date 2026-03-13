@@ -148,7 +148,7 @@ export default function Home() {
           className="relative pb-0"
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 12 }}
             animate={heroControls}
             className="relative"
           >
@@ -159,7 +159,7 @@ export default function Home() {
                 <div className="relative mt-0 mb-0 flex justify-center z-20">
                   <img
                     src="/logo.png"
-                    alt="SthayratoTech Logo"
+                    alt="StratoTech Logo"
                     className="w-80 md:w-[370px] lg:w-[485px] xl:w-[600px] h-auto object-contain"
                   />
                 </div>
@@ -231,7 +231,7 @@ export default function Home() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -257,11 +257,11 @@ export default function Home() {
           loading="lazy"
         />
         <motion.a
-          href="/about-us"
+          href="/contact"
           id="view-projects-cta"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 inline-flex items-center border border-white text-white font-bold py-4 px-8 rounded-xl backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 inline-flex items-center border border-white/30 text-white font-bold py-4 px-8 rounded-xl backdrop-blur-md bg-[#0b4a63]/90 hover:bg-[#0b4a63] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
         >
           Get Started
         </motion.a>
@@ -290,9 +290,8 @@ export default function Home() {
               <div
                 key={index}
                 className="w-56 h-56 rounded-2xl p-6 flex-shrink-0 flex items-center justify-center relative border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-300"
-                title={`Feature icon ${index % carouselIcons.length + 1}`}
               >
-                <img src={icon} alt={`Feature icon ${index % carouselIcons.length + 1}`} className="object-contain w-full h-full" loading="lazy" />
+                <img src={icon} alt="" aria-hidden="true" className="object-contain w-full h-full" loading="lazy" />
               </div>
             ))}
           </motion.div>

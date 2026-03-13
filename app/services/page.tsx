@@ -69,7 +69,7 @@ export default function Services() {
       {services.slice(0, 1).map(({ title, description, image, logo }, index) => (
         <motion.section
           key={title}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
           viewport={{ once: true }}
           className="mb-24 rounded-3xl border border-white/10 bg-white/10 backdrop-blur-xl shadow-[0_50px_140px_rgba(0,0,0,0.6)] p-16 md:p-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12"
@@ -108,7 +108,7 @@ export default function Services() {
           {services.slice(1).map(({ title, image, description }, index) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 12 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: index * 0.1 } }}
               viewport={{ once: true }}
               className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 md:p-10 flex flex-col items-center text-center hover:scale-[1.02] transition duration-500"
@@ -124,7 +124,7 @@ export default function Services() {
               />
               <button
                 onClick={() => setActiveService({ title, description })}
-                className="mt-2 rounded-xl border border-white/15 bg-white/10 px-6 py-3 text-white transition hover:bg-white/20"
+                className="mt-2 rounded-xl border border-white/30 bg-[#0b4a63]/90 px-6 py-3 text-white font-semibold transition hover:bg-[#0b4a63]"
               >
                 Learn More
               </button>
@@ -134,14 +134,14 @@ export default function Services() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1, y: 8 }}
         animate={{ opacity: 1, transition: { duration: 0.6, delay: services.length * 0.2 } }}
         viewport={{ once: true }}
         className="mb-16 flex justify-center"
       >
         <a
           href="/contact"
-          className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md px-10 py-5 text-white transition duration-300 hover:bg-white/20"
+          className="rounded-2xl border border-white/50 bg-white/90 backdrop-blur-md px-10 py-5 text-[#0b4a63] font-semibold transition duration-300 hover:bg-white"
         >
           Contact Us
         </a>

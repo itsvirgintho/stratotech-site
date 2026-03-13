@@ -4,8 +4,8 @@ import { FaBullseye, FaEye, FaHeart, FaLeaf, FaTools, FaUsers, FaLightbulb, FaSt
 
 export default function AboutUs() {
   const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
+    hidden: { opacity: 1, y: 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
   const highlights = [
@@ -73,7 +73,7 @@ export default function AboutUs() {
         </p>
         <a
           href="/systems"
-          className="mt-12 inline-block px-8 py-3 rounded-full border border-white/30 bg-white/15 backdrop-blur-md text-white text-sm tracking-wide hover:bg-white/25 transition-all duration-300"
+          className="mt-12 inline-block px-8 py-3 rounded-full border border-white/30 bg-[#0b4a63]/90 backdrop-blur-md text-white text-sm font-semibold tracking-wide hover:bg-[#0b4a63] transition-all duration-300"
           aria-label="Learn more about StratoTech"
         >
           Learn More
@@ -108,7 +108,7 @@ export default function AboutUs() {
                 ? "lg:col-span-3 lg:max-w-xl lg:mx-auto"
                 : ""
             }`}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
@@ -132,7 +132,7 @@ export default function AboutUs() {
       <section className="rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl py-20 px-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.25)] mx-auto max-w-4xl">
         <motion.h2
           className="font-display text-4xl mb-6 text-white"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
@@ -141,7 +141,7 @@ export default function AboutUs() {
         </motion.h2>
         <motion.p
           className="mb-10 max-w-xl mx-auto text-lg text-white/80"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -150,9 +150,9 @@ export default function AboutUs() {
         </motion.p>
         <motion.a
           href="/contact"
-          className="inline-block px-10 py-4 rounded-full border border-white/30 bg-white/15 backdrop-blur-md text-white text-sm tracking-wide hover:bg-white/25 transition-all duration-300"
+          className="inline-block px-10 py-4 rounded-full border border-white/50 bg-white/90 backdrop-blur-md text-[#0b4a63] text-sm font-semibold tracking-wide hover:bg-white transition-all duration-300"
           aria-label="Contact Us"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}

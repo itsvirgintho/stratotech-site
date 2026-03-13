@@ -39,7 +39,7 @@ export default function Contact() {
     <div className="min-h-screen px-6 py-20 md:px-12 bg-transparent text-white">
       {/* Hero Section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="max-w-5xl mx-auto mb-20"
@@ -56,7 +56,7 @@ export default function Contact() {
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 flex flex-col shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
@@ -123,7 +123,7 @@ export default function Contact() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="font-semibold py-4 rounded-2xl border border-white/20 bg-white/10 text-white transition duration-300 hover:bg-white/20"
+            className="font-semibold py-4 rounded-2xl border border-white/30 bg-[#0b4a63]/90 text-white transition duration-300 hover:bg-[#0b4a63]"
           >
             Submit
           </motion.button>
@@ -131,7 +131,7 @@ export default function Contact() {
 
         {/* Additional Contact Info */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
