@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const services = [
@@ -8,6 +9,8 @@ const services = [
     description:
       "Strato Unico is our bespoke tailoring service for special projects requiring fully customized surface solutions. Designed for unique architectural, themed, or technically demanding environments, this service allows us to engineer a system specifically adapted to your project’s structural, environmental, and aesthetic requirements. From concept development through material selection and technical detailing, Strato Unico delivers precision-crafted, project-specific performance without compromising design intent.",
     image: "/services/imagine.png",
+    imageWidth: 1024,
+    imageHeight: 942,
     logo: "/services/StratoUnicoVector.svg",
   },
   {
@@ -15,6 +18,8 @@ const services = [
     description:
       "Our expert design and specification services ensure every detail of your project is meticulously planned and fully compliant, tailored precisely to your unique requirements. Leveraging advanced modeling tools and industry best practices, we collaborate closely with your team to create detailed blueprints and specifications that optimize functionality, safety, and cost-effectiveness. From initial concept through final approval, our comprehensive approach guarantees that your project meets all regulatory standards while reflecting your vision and goals.",
     image: "/services/design.png",
+    imageWidth: 1024,
+    imageHeight: 945,
     popup: true,
   },
   {
@@ -22,6 +27,8 @@ const services = [
     description:
       "Benefit from our skilled installation team’s precision and professionalism, guaranteeing a smooth, timely setup that maximizes operational efficiency from day one. Our installers are trained to handle complex systems with care and expertise, ensuring every component is correctly positioned and securely integrated. We prioritize minimizing disruptions to your operations and maintaining strict safety protocols, delivering an installation experience that is efficient, reliable, and aligned with your project timeline.",
     image: "/services/car-dealership.png",
+    imageWidth: 1184,
+    imageHeight: 782,
     popup: true,
   },
   {
@@ -29,6 +36,8 @@ const services = [
     description:
       "Empower your installers with our comprehensive training and certification programs, designed to equip them with advanced skills and industry-leading knowledge for superior execution. Our curriculum covers the latest techniques, safety standards, and product innovations, ensuring your team is fully prepared to install and maintain systems to the highest quality standards. Certification from our program not only validates expertise but also enhances credibility and confidence in your workforce, supporting ongoing professional development and operational excellence.",
     image: "/services/resort-pool.png",
+    imageWidth: 1184,
+    imageHeight: 785,
     popup: true,
   },
 ];
@@ -66,7 +75,7 @@ export default function Services() {
       </section>
 
       {/* Strato Unico (Primary Service) */}
-      {services.slice(0, 1).map(({ title, description, image, logo }, index) => (
+      {services.slice(0, 1).map(({ title, description, image, imageWidth, imageHeight, logo }, index) => (
         <motion.section
           key={title}
           initial={{ opacity: 1, y: 12 }}
@@ -92,9 +101,12 @@ export default function Services() {
             <p className="text-white/70 leading-relaxed">{description}</p>
           </div>
           <div className="flex-1 w-full max-w-md min-w-[280px]">
-            <img
+            <Image
               src={image}
               alt={title}
+              width={imageWidth}
+              height={imageHeight}
+              sizes="(min-width: 1024px) 420px, 90vw"
               className="w-full rounded-2xl object-cover max-h-[420px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
               loading="lazy"
             />
@@ -105,7 +117,7 @@ export default function Services() {
       {/* Additional Services (Three in One Row) */}
       <div className="max-w-7xl mx-auto mb-24">
         <div className="grid gap-8 md:grid-cols-3">
-          {services.slice(1).map(({ title, image, description }, index) => (
+          {services.slice(1).map(({ title, image, imageWidth, imageHeight, description }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 1, y: 12 }}
@@ -116,9 +128,12 @@ export default function Services() {
               <h3 className="text-2xl font-display text-white mb-6">
                 {title}
               </h3>
-              <img
+              <Image
                 src={image}
                 alt={title}
+                width={imageWidth}
+                height={imageHeight}
+                sizes="(min-width: 1024px) 320px, 90vw"
                 className="w-full rounded-2xl object-cover max-h-[260px] mb-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
                 loading="lazy"
               />

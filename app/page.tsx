@@ -2,6 +2,7 @@
 
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
+import Image from "next/image";
 import { motion, useAnimation, useViewportScroll, useTransform, useMotionTemplate } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -157,9 +158,13 @@ export default function Home() {
               <div className="relative flex flex-col items-center justify-start h-full w-full pt-0">
                 {/* Strato Icon Above Hero */}
                 <div className="relative mt-0 mb-0 flex justify-center z-20">
-                  <img
+                  <Image
                     src="/logo.png"
                     alt="StratoTech Logo"
+                    width={2850}
+                    height={1200}
+                    priority
+                    sizes="(min-width: 1280px) 600px, (min-width: 1024px) 485px, (min-width: 768px) 370px, 320px"
                     className="w-80 md:w-[370px] lg:w-[485px] xl:w-[600px] h-auto object-contain"
                   />
                 </div>
@@ -178,14 +183,13 @@ export default function Home() {
               {/* RIGHT: Closeup Texture Cube */}
               <div className="hidden lg:flex h-full items-center justify-center">
                 <div className="relative w-[80%] h-[80%] max-w-[700px] max-h-[700px] overflow-hidden rounded-2xl">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: "url('/closeup-texture.jpg')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      backgroundRepeat: "no-repeat",
-                    }}
+                  <Image
+                    src="/closeup-texture.jpg"
+                    alt="Surface texture detail"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 0px"
+                    className="object-cover"
+                    priority
                   />
                 </div>
               </div>
@@ -250,12 +254,16 @@ export default function Home() {
       </Section>
 
       <div style={{ position: 'relative', zIndex: 0, paddingTop: '0.5rem', paddingBottom: '3.5rem', maxHeight: 850, padding: '2.5rem 1.25rem', marginTop: '0rem', marginBottom: '3rem' }} className='relative w-full rounded-xl overflow-hidden container-architectural'>
-        <img
-          src={ecoPoolImages[ecoIndex]}
-          alt="Eco Pool"
-          className="w-full aspect-video object-cover rounded-xl transition-opacity duration-1000"
-          loading="lazy"
-        />
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+          <Image
+            src={ecoPoolImages[ecoIndex]}
+            alt="Eco Pool"
+            fill
+            sizes="(min-width: 1024px) 900px, 90vw"
+            className="object-cover transition-opacity duration-1000"
+            loading="lazy"
+          />
+        </div>
         <motion.a
           href="/contact"
           id="view-projects-cta"

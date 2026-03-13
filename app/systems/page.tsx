@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -110,10 +111,14 @@ export default function Systems() {
 
           {/* RIGHT COLUMN - IMAGE */}
           <div className="relative w-full h-full flex items-center justify-center">
-            <img
+            <Image
               src="/system-diagram.png"
               alt="StratoTech System"
+              width={1200}
+              height={729}
+              sizes="(min-width: 1024px) 900px, 90vw"
               className="w-full max-w-[900px] h-auto object-contain mx-auto my-auto"
+              priority
             />
           </div>
 

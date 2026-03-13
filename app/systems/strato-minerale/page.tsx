@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -57,11 +58,15 @@ export default function StratoMineralePage() {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <img
+            <Image
               src="/system-diagram.png"
               alt="Strato Minerale Visual"
+              width={1200}
+              height={729}
+              sizes="(min-width: 1024px) 420px, 80vw"
               onClick={() => setImageOpen(true)}
               className="max-w-[420px] w-full object-contain rounded-xl cursor-zoom-in transition hover:scale-105"
+              priority
             />
           </motion.div>
 
@@ -125,10 +130,14 @@ export default function StratoMineralePage() {
           </div>
 
           <div className="flex justify-center">
-            <img
+            <Image
               src="/system-diagram.png"
               alt="StratoTech System Diagram"
+              width={1200}
+              height={729}
+              sizes="(min-width: 1024px) 420px, 80vw"
               className="max-w-[420px] w-full object-contain"
+              loading="lazy"
             />
           </div>
 

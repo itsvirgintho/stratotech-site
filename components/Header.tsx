@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -20,7 +21,15 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/10 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
         <Link href="/" className="flex items-center">
-          <img src="/logo.png" alt="StratoTech Logo" className="h-[70px] w-auto object-contain" />
+          <Image
+            src="/logo.png"
+            alt="StratoTech Logo"
+            width={2850}
+            height={1200}
+            sizes="(min-width: 1024px) 200px, 160px"
+            className="h-[70px] w-auto object-contain"
+            priority
+          />
         </Link>
         <nav className="hidden md:flex items-center space-x-10">
           {menuItems.map(({ name, path }) => {
