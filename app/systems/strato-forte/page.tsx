@@ -64,6 +64,7 @@ export default function StratoFortePage() {
               width={1200}
               height={729}
               sizes="(min-width: 1024px) 420px, 80vw"
+              quality={75}
               onClick={() => setImageOpen(true)}
               className="max-w-[420px] w-full object-contain rounded-xl cursor-zoom-in transition hover:scale-105"
               priority
@@ -136,6 +137,7 @@ export default function StratoFortePage() {
               width={1200}
               height={729}
               sizes="(min-width: 1024px) 420px, 80vw"
+              quality={75}
               className="max-w-[420px] w-full object-contain"
               loading="lazy"
             />
@@ -149,10 +151,15 @@ export default function StratoFortePage() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-6"
           onClick={() => setImageOpen(false)}
         >
-          <img
+          <Image
             src="/system-diagram.png"
             alt="Strato Forte Visual Large"
+            width={1200}
+            height={729}
+            sizes="95vw"
+            quality={80}
             className="max-h-[95vh] max-w-[95vw] object-contain cursor-zoom-out"
+            loading="lazy"
           />
         </div>
       )}

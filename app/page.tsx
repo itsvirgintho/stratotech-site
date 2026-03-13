@@ -5,7 +5,6 @@ import Section from "@/components/Section";
 import Image from "next/image";
 import { motion, useAnimation, useViewportScroll, useTransform, useMotionTemplate } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { ShieldCheck, Layers, Leaf } from "lucide-react";
 
 const features = [
@@ -50,9 +49,7 @@ const squares = Array(9).fill(0);
 
 export default function Home() {
   const controls = useAnimation();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const router = useRouter();
 
   useEffect(() => {
     controls.start({
@@ -164,6 +161,7 @@ export default function Home() {
                     width={2850}
                     height={1200}
                     priority
+                    quality={80}
                     sizes="(min-width: 1280px) 600px, (min-width: 1024px) 485px, (min-width: 768px) 370px, 320px"
                     className="w-80 md:w-[370px] lg:w-[485px] xl:w-[600px] h-auto object-contain"
                   />
@@ -188,8 +186,9 @@ export default function Home() {
                     alt="Surface texture detail"
                     fill
                     sizes="(min-width: 1024px) 40vw, 0px"
+                    quality={75}
                     className="object-cover"
-                    priority
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -260,6 +259,7 @@ export default function Home() {
             alt="Eco Pool"
             fill
             sizes="(min-width: 1024px) 900px, 90vw"
+            quality={75}
             className="object-cover transition-opacity duration-1000"
             loading="lazy"
           />
@@ -299,7 +299,16 @@ export default function Home() {
                 key={index}
                 className="w-56 h-56 rounded-2xl p-6 flex-shrink-0 flex items-center justify-center relative border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-300"
               >
-                <img src={icon} alt="" aria-hidden="true" className="object-contain w-full h-full" loading="lazy" />
+                <Image
+                  src={icon}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  sizes="224px"
+                  quality={70}
+                  className="object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </motion.div>

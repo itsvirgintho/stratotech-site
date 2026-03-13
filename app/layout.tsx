@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -124,10 +125,15 @@ export default function RootLayout({
 
         {/* Topographic Overlay */}
         <div className="fixed inset-0 -z-20 pointer-events-none">
-          <img
+          <Image
             src="/topography.webp"
             alt="Topographic Background"
-            className="w-full h-full object-cover opacity-30"
+            fill
+            sizes="100vw"
+            quality={70}
+            fetchPriority="low"
+            decoding="async"
+            className="object-cover opacity-30"
           />
         </div>
 

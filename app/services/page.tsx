@@ -107,6 +107,7 @@ export default function Services() {
               width={imageWidth}
               height={imageHeight}
               sizes="(min-width: 1024px) 420px, 90vw"
+              quality={75}
               className="w-full rounded-2xl object-cover max-h-[420px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
               loading="lazy"
             />
@@ -134,6 +135,7 @@ export default function Services() {
                 width={imageWidth}
                 height={imageHeight}
                 sizes="(min-width: 1024px) 320px, 90vw"
+                quality={75}
                 className="w-full rounded-2xl object-cover max-h-[260px] mb-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
                 loading="lazy"
               />

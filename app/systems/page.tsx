@@ -117,6 +117,7 @@ export default function Systems() {
               width={1200}
               height={729}
               sizes="(min-width: 1024px) 900px, 90vw"
+              quality={75}
               className="w-full max-w-[900px] h-auto object-contain mx-auto my-auto"
               priority
             />
