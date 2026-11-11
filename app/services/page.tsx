@@ -7,7 +7,7 @@ const services = [
   {
     title: "Strato Unico",
     description:
-      "Strato Unico is our bespoke tailoring service for special projects requiring fully customized surface solutions. Designed for unique architectural, themed, or technically demanding environments, this service allows us to engineer a system specifically adapted to your project’s structural, environmental, and aesthetic requirements. From concept development through material selection and technical detailing, Strato Unico delivers precision-crafted, project-specific performance without compromising design intent.",
+      "Custom engineering, design, and technical consulting services for specialized architectural surface coatings and custom finish specifications.",
     image: "/services/imagine.png",
     imageWidth: 1024,
     imageHeight: 942,

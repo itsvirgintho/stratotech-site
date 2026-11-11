@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const categories = [
   {
@@ -13,7 +13,7 @@ const categories = [
         title: "Strato Scudo",
         logo: "/systems/StratoScudo.png",
         description:
-          "A premium, water-based PU topcoat that seals in your design. Engineered for exceptional wear and UV resistance to ensure long-lasting protection. Available in Gloss or Matte.",
+          "Water-based polyurethane protective surface sealant and clear coating preparation designed for sealing building structures and resinous systems.",
       },
     ],
   },
@@ -26,19 +26,19 @@ const categories = [
         title: "Strato Stampa",
         logo: "/systems/StratoStampa.png",
         description:
-          "A High Strength, high-viscosity epoxy mortar engineered for stamped and textured surfaces. It bonds powerfully, cures to a dense chemical-resistant finish, and is built for demanding interior and exterior applications.",
+          "High-viscosity epoxy adhesive bonding mortar and building mix formulated for stamped, textured, and decorative surface overlays.",
       },
       {
         title: "Strato Forte",
         logo: "/systems/StratoForte.png",
         description:
-          "A 100% solids epoxy primer and binder that strengthens and seals absorbent substrates. Blended with precision granules, it builds an extremely durable, high performance film.",
+          "100% solids polymer binding mortar and construction resin matrix engineered for substrate priming and aggregate surface systems.",
       },
       {
         title: "Strato VB",
         logo: "/systems/StratoVB.png",
         description:
-          "A next-generation, solvent-free epoxy vapor barrier that deeply penetrates and bonds to porous substrates. It creates a structural anchoring layer that blocks moisture, stabilizes concrete, and guarantees maximum adhesion for subsequent coats.",
+          "Solvent-free liquid waterproofing chemical composition and vapor membrane preparation formulated for concrete construction substrates.",
       },
     ],
   },
@@ -51,25 +51,25 @@ const categories = [
         title: "Strato Croma",
         logo: "/systems/StratoCroma.png",
         description:
-          "UV Stable granules available in a wide spectrum of colors. Engineered with microporous structure for anti-slip properties and increased binding performance.",
+          "Non-metal aggregate material consisting of synthetic acrylic colored flakes engineered for decorative building and surface finishes.",
       },
       {
         title: "Strato Minerale",
         logo: "/systems/StratoMinerale.png",
         description:
-          "Natural mineral aggregates crushed into sand and powder forms. Designed for superior durability, natural texture, and long-term color stability.",
+          "Natural mineral concrete aggregate composed of graded quartz, granite, and silicates designed for building and surfacing applications.",
       },
       {
         title: "Strato Metallico",
         logo: "/systems/StratoMetallico.png",
         description:
-          "Metallic sands and powders formulated for resin integration or mortar-style application, offering premium marbled, reflective, and tooled metallic aesthetics.",
+          "Metallic aggregate material composed of fine metal powders and granules formulated for concrete, mortar, and decorative finishes.",
       },
       {
         title: "Strato Aqua",
         logo: "/systems/StratoAqua.png",
         description:
-          "Specialized blends of Strato Croma and Strato Minerale specifically engineered for underwater and submerged applications, maintaining adhesion, vibrancy, and durability in aquatic environments.",
+          "Non-metal aggregate material blend composed of synthetic acrylic flakes and mineral granules engineered for swimming pool and submerged aquatic finishes.",
       },
     ],
   },
@@ -90,8 +90,36 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const systemId = (title: string) => title.toLowerCase().replace(/ /g, "-");
+
 export default function Systems() {
   const [activeTab, setActiveTab] = useState(categories[0].name);
+  const pendingSystem = useRef<string | null>(null);
+
+  const scrollToPendingSystem = () => {
+    if (!pendingSystem.current) return;
+    const target = document.getElementById(pendingSystem.current);
+    if (!target) return;
+    target.scrollIntoView({ behavior: "instant", block: "center" });
+    pendingSystem.current = null;
+  };
+
+  useEffect(() => {
+    const openLinkedSystem = () => {
+      const id = window.location.hash.slice(1);
+      const category = categories.find((category) =>
+        category.systems.some((system) => systemId(system.title) === id)
+      );
+      pendingSystem.current = category ? id : null;
+      if (!category) return;
+      setActiveTab(category.name);
+      scrollToPendingSystem();
+    };
+
+    openLinkedSystem();
+    window.addEventListener("hashchange", openLinkedSystem);
+    return () => window.removeEventListener("hashchange", openLinkedSystem);
+  }, []);
 
   const activeCategory = categories.find((cat) => cat.name === activeTab);
 
@@ -105,7 +133,7 @@ export default function Systems() {
           <div className="flex flex-col justify-center px-6 md:px-12">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white">The StratoTech Integrated System</h1>
             <p className="text-lg md:text-xl leading-relaxed text-white/80 mb-6">
-              StratoTech surfaces are engineered layer by layer to solve real-world problems: moisture, wear, design limitations, and environmental stress. Together, these layers form a seamless, high-performance surface that stands up to the most demanding environments: themed attractions, retail spaces, aquatic facilities, and beyond. All without ever sacrificing design.
+              Non-metal building materials and polymer-modified surface coating systems engineered for architectural concrete and structural substrates.
             </p>
           </div>
 
@@ -144,7 +172,10 @@ export default function Systems() {
             return (
               <button
                 key={name}
-                onClick={() => setActiveTab(name)}
+                onClick={() => {
+                  pendingSystem.current = null;
+                  setActiveTab(name);
+                }}
                 className={`px-6 py-3 rounded-full border border-white/20 text-sm tracking-wide transition-all duration-300 ${isActive ? 'bg-white/15 text-white backdrop-blur-md' : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'}`}
                 aria-selected={isActive}
                 role="tab"
@@ -165,6 +196,7 @@ export default function Systems() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
+              onAnimationComplete={scrollToPendingSystem}
               className="flex flex-wrap justify-center gap-8"
               role="tabpanel"
               aria-labelledby={`tab-${activeCategory.name}`}
@@ -173,6 +205,7 @@ export default function Systems() {
                 activeCategory.systems.map(({ title, description, logo }) => (
                   <motion.div
                     key={title}
+                    id={systemId(title)}
                     variants={itemVariants}
                     initial="hidden"
                     animate="visible"
