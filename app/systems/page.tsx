@@ -222,7 +222,7 @@ export default function Systems() {
                       </div>
                     )}
                     <h4 className="text-white text-xl font-semibold mb-2">{title}</h4>
-                    <p className="text-white/70 text-sm leading-relaxed font-light">{description}</p>
+                    <p className="text-white/90 text-sm leading-relaxed font-normal">{description}</p>
                   </motion.div>
                 ))
               ) : (
