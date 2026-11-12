@@ -22,8 +22,12 @@ export default function Hero() {
         </h1>
 
         <p className="font-body text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto text-white/85 mt-2">
-          Engineered layer by layer to stand the test of time, without ever sacrificing design.
-        </p>
+  Stratotech Advanced Surfaces offers innovative polymer-based surface systems designed to protect, enhance, and improve architectural and building surfaces. Our advanced coating technologies create durable, high-performance surface solutions for a variety of construction and architectural applications.
+</p>
+
+<p className="font-body text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto text-white/85 mt-4">
+  Engineered for long-lasting performance, these systems combine surface protection, durability, and design flexibility to meet the needs of modern building projects.
+</p>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 space-y-4 sm:space-y-0">
           <Link
             href="/systems"
