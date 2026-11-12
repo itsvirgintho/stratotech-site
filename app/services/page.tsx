@@ -98,7 +98,7 @@ export default function Services() {
             <h2 className="font-display text-white mb-6 text-4xl md:text-5xl">
               {title}
             </h2>
-            <p className="text-white/90 leading-relaxed font-normal">{description}</p>
+            <p className="text-white text-sm leading-relaxed font-bold">{description}</p>
           </div>
           <div className="flex-1 w-full max-w-md min-w-[280px]">
             <Image

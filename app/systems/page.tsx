@@ -176,7 +176,7 @@ export default function Systems() {
                   pendingSystem.current = null;
                   setActiveTab(name);
                 }}
-                className={`px-6 py-3 rounded-full border border-white/20 text-sm tracking-wide transition-all duration-300 ${isActive ? 'bg-white/15 text-white backdrop-blur-md' : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'}`}
+                className={`px-6 py-3 rounded-full border border-white/20 text-xl font-semibold transition-all duration-300 ${isActive ? 'bg-white/20 text-white backdrop-blur-lg' : 'bg-white/5 text-white/60 backdrop-blur-lg hover:text-white hover:bg-white/10'}`}
                 aria-selected={isActive}
                 role="tab"
                 type="button"
@@ -222,7 +222,7 @@ export default function Systems() {
                       </div>
                     )}
                     <h4 className="text-white text-xl font-semibold mb-2">{title}</h4>
-                    <p className="text-white/90 text-sm leading-relaxed font-normal">{description}</p>
+                    <p className="text-white text-sm leading-relaxed font-bold">{description}</p>
                   </motion.div>
                 ))
               ) : (
