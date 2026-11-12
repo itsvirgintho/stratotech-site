@@ -12,20 +12,13 @@ export default function Hero() {
         initial={{ opacity: 1, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="max-w-4xl mx-auto p-6 md:p-8 border border-white/15 bg-white/10 backdrop-blur-xl rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+        className="max-w-4xl mx-auto p-6 md:p-8 border border-white/10 bg-white/1 backdrop-blur-xl rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
       >
-        <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-white/70 mb-3">
-          StratoTech
-        </p>
-        <h1 className="font-display text-2xl md:text-4xl lg:text-5xl tracking-tight leading-[1.05] mb-3 text-white">
-          High Performance Resin Systems
-        </h1>
-
-        <p className="font-body text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto text-white/85 mt-2">
+        <p className="font-body text-lg md:text-2xl font-normal leading-relaxed max-w-3xl mx-auto text-white mt-4">
   Stratotech Advanced Surfaces offers innovative polymer-based surface systems designed to protect, enhance, and improve architectural and building surfaces. Our advanced coating technologies create durable, high-performance surface solutions for a variety of construction and architectural applications.
 </p>
 
-<p className="font-body text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto text-white/85 mt-4">
+<p className="font-body text-lg md:text-2xl font-normal leading-relaxed max-w-3xl mx-auto text-white mt-4">
   Engineered for long-lasting performance, these systems combine surface protection, durability, and design flexibility to meet the needs of modern building projects.
 </p>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 space-y-4 sm:space-y-0">
